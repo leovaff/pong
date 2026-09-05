@@ -1,0 +1,71 @@
+[gd_scene format=3 uid="uid://ct07d4m6eqinn"]
+
+[ext_resource type="Script" uid="uid://bj0lpfsw86q62" path="res://script/main_menu.gd" id="1_3er1b"]
+
+[node name="MainMenu" type="Control" unique_id=548728572]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_3er1b")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1837010897]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -24.0
+offset_top = -46.5
+offset_right = 24.0
+offset_bottom = 46.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Control" type="Control" parent="VBoxContainer" unique_id=1598691293]
+layout_mode = 2
+
+[node name="GameTitle" type="RichTextLabel" parent="VBoxContainer/Control" unique_id=395417905]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -42.0
+offset_top = -40.0
+offset_right = 42.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_font_sizes/normal_font_size = 42
+bbcode_enabled = true
+text = "[wave]PONG[/wave]
+"
+fit_content = true
+autowrap_mode = 0
+
+[node name="Play" type="Button" parent="VBoxContainer" unique_id=1496843105]
+layout_mode = 2
+text = "Jogar"
+
+[node name="Quit" type="Button" parent="VBoxContainer" unique_id=733438217]
+layout_mode = 2
+text = "Sair"
+
+[node name="Author" type="Label" parent="." unique_id=1850053270]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 16.0
+offset_top = -39.0
+offset_right = 243.0
+offset_bottom = -16.0
+grow_vertical = 0
+text = "Criado por Leonardo Fonseca"
+
+[connection signal="pressed" from="VBoxContainer/Play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="VBoxContainer/Quit" to="." method="_on_quit_pressed"]

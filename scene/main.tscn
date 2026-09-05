@@ -4,6 +4,10 @@
 [ext_resource type="Script" uid="uid://duhrsa7nt65eq" path="res://script/main.gd" id="1_wp4xf"]
 [ext_resource type="Script" uid="uid://cms3r4vikf7py" path="res://script/ball.gd" id="2_v0l8b"]
 [ext_resource type="Script" uid="uid://onpisil84ei0" path="res://script/bot.gd" id="3_brvut"]
+[ext_resource type="AudioStream" uid="uid://w1xvyera1jpl" path="res://asset/hit01.sfxr" id="5_0ha60"]
+[ext_resource type="AudioStream" uid="uid://cekalt8pup6od" path="res://asset/player_score.sfxr" id="6_p1hux"]
+[ext_resource type="AudioStream" uid="uid://del0hkn5ly387" path="res://asset/bot_score.sfxr" id="7_of57s"]
+[ext_resource type="AudioStream" uid="uid://dfm0s6khkd15s" path="res://asset/Juhani Junkala [Chiptune Adventures] 1. Stage 1.wav" id="8_of57s"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ajdik"]
 size = Vector2(20, 149)
@@ -63,6 +67,9 @@ offset_bottom = 10.0
 color = Color(0.52309304, 0.61928725, 0.4393356, 1)
 metadata/_edit_use_anchors_ = true
 
+[node name="HitSound" type="AudioStreamPlayer2D" parent="Ball" unique_id=1359828613]
+stream = ExtResource("5_0ha60")
+
 [node name="Walls" type="StaticBody2D" parent="." unique_id=1334640019]
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Walls" unique_id=931114975]
@@ -97,6 +104,16 @@ offset_bottom = 23.0
 grow_horizontal = 2
 text = "0 x 0"
 horizontal_alignment = 1
+
+[node name="PlayerScoreSound" type="AudioStreamPlayer" parent="." unique_id=1908971653]
+stream = ExtResource("6_p1hux")
+
+[node name="BotScoreSound" type="AudioStreamPlayer" parent="." unique_id=960824268]
+stream = ExtResource("7_of57s")
+
+[node name="Soundtrack" type="AudioStreamPlayer" parent="." unique_id=1473126771]
+stream = ExtResource("8_of57s")
+autoplay = true
 
 [connection signal="body_entered" from="Goal1" to="." method="_on_goal_1_body_entered"]
 [connection signal="body_entered" from="Goal2" to="." method="_on_goal_2_body_entered"]
