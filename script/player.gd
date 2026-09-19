@@ -1,7 +1,9 @@
 extends CharacterBody2D
 
+
 var max_speed: float = 800
 var speed: float = 0
+
 
 func _physics_process(delta: float) -> void:
 	var direction : int = Input.get_axis("move_up", "move_down")
